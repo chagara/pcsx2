@@ -445,6 +445,7 @@ MainEmuFrame::MainEmuFrame(wxWindow* parent, const wxString& title)
 
 	m_menuSys.Append(MenuId_Sys_Shutdown,	_("Shut&down"),
 		_("Wipes all internal VM states and shuts down plugins."));
+	m_menuSys.FindItem(MenuId_Sys_Shutdown)->Enable(false);
 
 	m_menuSys.Append(MenuId_Exit,			_("E&xit"),
 		AddAppName(_("Closing %s may be hazardous to your health")));
@@ -665,8 +666,6 @@ void MainEmuFrame::ApplyCoreStatus()
 			cdvd2->SetHelp(_("Use fast boot to skip PS2 startup and splash screens"));
 		}
 	}
-
-	menubar.Enable( MenuId_Sys_Shutdown, SysHasValidState() || CorePlugins.AreAnyInitialized() );
 }
 
 //Apply a config to the menu such that the menu reflects it properly
