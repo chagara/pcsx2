@@ -455,17 +455,17 @@ MainEmuFrame::MainEmuFrame(wxWindow* parent, const wxString& title)
 	wxMenu& isoRecents( wxGetApp().GetRecentIsoMenu() );
 
 	//m_menuCDVD.AppendSeparator();
-	m_menuCDVD.Append( MenuId_IsoSelector,	_("Iso &Selector"), &isoRecents );
+	m_menuCDVD.Append( MenuId_IsoSelector,	_("ISO &Selector"), &isoRecents );
 	m_menuCDVD.Append( GetPluginMenuId_Settings(PluginId_CDVD), _("Plugin &Menu"), m_PluginMenuPacks[PluginId_CDVD] );
 
 	m_menuCDVD.AppendSeparator();
-	m_menuCDVD.Append( MenuId_Src_Iso,		_("&Iso"),		_("Makes the specified ISO image the CDVD source."), wxITEM_RADIO );
+	m_menuCDVD.Append( MenuId_Src_Iso,		_("&ISO"),		_("Makes the specified ISO image the CDVD source."), wxITEM_RADIO );
 	m_menuCDVD.Append( MenuId_Src_Plugin,	_("&Plugin"),	_("Uses an external plugin as the CDVD source."), wxITEM_RADIO );
 	m_menuCDVD.Append( MenuId_Src_NoDisc,	_("&No disc"),	_("Use this to boot into your virtual PS2's BIOS configuration."), wxITEM_RADIO );
 
 	//m_menuCDVD.AppendSeparator();
 	//m_menuCDVD.Append( MenuId_SkipBiosToggle,_("Enable BOOT2 injection"),
-	//	_("Skips PS2 splash screens when booting from Iso or DVD media"), wxITEM_CHECK );
+	//	_("Skips PS2 splash screens when booting from ISO or DVD media"), wxITEM_CHECK );
 
 	// ------------------------------------------------------------------------
 
