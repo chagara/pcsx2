@@ -231,7 +231,6 @@ bool pxStaticText::_updateWrapping( bool textChanged )
 
 	wxString wrappedLabel;
 	int newWidth = GetSize().GetWidth();
-	newWidth -= (int)(newWidth*m_paddingPct_horiz*2) + (m_paddingPix_horiz*2);
 
 	if( !textChanged && (newWidth == m_wrappedWidth) ) return false;
 
