@@ -142,7 +142,6 @@ Panels::SpeedHacksPanel::SpeedHacksPanel( wxWindow* parent )
 		wxDefaultPosition, wxDefaultSize, wxHORIZONTAL | wxSL_AUTOTICKS | wxSL_LABELS );
 
 	m_msg_eecycle = new pxStaticHeading( m_eeSliderPanel );
-	m_msg_eecycle->SetHeight(5);
 
 	const wxChar* ee_tooltip = pxEt( L"Setting lower values on this slider effectively reduces the clock speed of the EmotionEngine's R5900 core cpu, and typically brings big speedups to games that fail to utilize the full potential of the real PS2 hardware. Conversely, higher values effectively increase the clock speed which may bring about an increase in in-game FPS while also making games more demanding and possibly causing glitches."
 	);
@@ -159,7 +158,6 @@ Panels::SpeedHacksPanel::SpeedHacksPanel( wxWindow* parent )
 		wxHORIZONTAL | wxSL_AUTOTICKS | wxSL_LABELS );
 
 	m_msg_vustealer = new pxStaticHeading(m_vuSliderPanel);
-	m_msg_vustealer->SetHeight(5);
 
 	const wxChar* vu_tooltip = pxEt( L"This slider controls the amount of cycles the VU unit steals from the EmotionEngine.  Higher values increase the number of cycles stolen from the EE for each VU microprogram the game runs."
 	);
@@ -369,11 +367,13 @@ void Panels::SpeedHacksPanel::Defaults_Click( wxCommandEvent& evt )
 void Panels::SpeedHacksPanel::EECycleRate_Scroll(wxScrollEvent &event)
 {
 	SetEEcycleSliderMsg();
+	Layout();
 	event.Skip();
 }
 
 void Panels::SpeedHacksPanel::VUCycleRate_Scroll(wxScrollEvent &event)
 {
 	SetVUcycleSliderMsg();
+	Layout();
 	event.Skip();
 }
